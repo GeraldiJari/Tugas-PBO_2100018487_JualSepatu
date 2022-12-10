@@ -1,17 +1,26 @@
 import java.util.Scanner;
 
 public class Barang extends Data{
-    String[][] merk = {{"Sedan","01",},{"BMW ","02"},{"TAXI ","03"},{"LANCER","04"},{"TOYOTA","05"}};
+
+    int harga;
+    public Barang(int jumlah) {
+        super(jumlah);
+        //TODO Auto-generated constructor stub
+    }
+
     public String model;
-    private int pilih_mobil;
-    private int sewa1,sewa2,sewa3,sewa4,sewa5;
     Scanner input = new Scanner(System.in);
-    public String[][] getMerk() {
-        return merk;
+    private int sewa;
+    private int pajak = 2500;
+    int total;
+    int jml;
+    public int getSewa(int sewa) {
+        return sewa;
     }
-    public void setMerk(String[][] merk) {
-        this.merk = merk;
+    public void setSewa(int sewa) {
+        this.sewa = sewa;
     }
+    
     public String getModel() {
         return model;
     }
@@ -19,35 +28,44 @@ public class Barang extends Data{
         this.model = model;
     }
 
-    public void merk(){
-        for(int i=0; i < merk.length; i++){
-            System.out.print(merk[i][0]);System.out.print("\t"+merk[i][1]);
-            System.out.println();
-        }
-    }
-
-    public void pilih(int pilih_mobil){
-        if(pilih_mobil==1){
-            sewa1 = 20000;
+    public void pilih1(){      
+            sewa = 20000;
             System.out.println("Warna : ");
-            System.out.println("Merk : Mobil Sedan");
-            System.out.println("Harga Sewa Per Hari: "+sewa1);
-            System.out.println(">");
-
-            System.out.println();
-        }
-        else if(pilih_mobil==2){
-            System.out.println("Deskripsi : ");
-            System.out.println("Merk : BMW");
-            System.out.println("Harga Sewa Per Hari: "+sewa2);
-            System.out.println();
-        }
-        else if(pilih_mobil==3){
-            System.out.println("Deskripsi : ");
-            System.out.println("Merk : TAXI ");
-            System.out.println("Harga Sewa Per Hari: "+sewa3);
-            System.out.println();
-        }
-        
-    }  
+            System.out.println("Merk : Mike");
+            System.out.println("Harga Sewa Per Hari: "+sewa);
+            total = sewa+setJumlah(jml_sepatu(jml));
+            System.out.println("Harga Sewa Per Hari: "+total);
+            int bayar = input.nextInt();
+            bayar = total-bayar;
+            System.out.println("Totalnya : "+bayar);
+    }
+        public void pilih2(){      
+            sewa = 30000;
+            System.out.println("Warna : ");
+            System.out.println("Merk : Adinda");
+            System.out.println("Harga Sewa Per Hari: "+sewa);
+            total = sewa+setJumlah(jml_sepatu(jml));
+            System.out.println("Harga Sewa Per Hari: "+total);
+            int bayar = input.nextInt();
+            bayar = total-bayar;
+            System.out.println("Totalnya : "+bayar);
+    }
+        public void pilih3(){      
+            sewa = 40000;
+            System.out.println("Warna : ");
+            System.out.println("Merk : Untitle");
+            System.out.println("Harga Sewa Per Hari: "+sewa);
+            total = sewa+setJumlah(jml_sepatu(jml));
+            System.out.println("Harga Sewa Per Hari: "+total);
+            int bayar = input.nextInt();
+            bayar = total-bayar;
+            System.out.println("Totalnya : "+bayar);
+    }
+    
+    @Override
+    int jml_sepatu(int jml) {
+        // TODO Auto-generated method stub
+        return (super.getJumlah(jml)*pajak);
+    } 
 }
+

@@ -1,7 +1,13 @@
 public class Pembeli extends Data {
+
+    public Pembeli() {
+        super(jumlah);
+        //TODO Auto-generated constructor stub
+    }
+
     private String Nama_pembeli, no_hp, alamat;
 
-    public String getNama_pembeli() {
+    protected String getNama_pembeli() {
         return Nama_pembeli;
     }
 
@@ -24,11 +30,11 @@ public class Pembeli extends Data {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-
+    
     @Override
-    public void tes() {
-        System.out.println("Kontol");
+    int jml_sepatu(int jml) {
+        // TODO Auto-generated method stub
+        return (super.getJumlah(jml));
     }
-
     
 }
